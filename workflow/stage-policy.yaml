@@ -1,0 +1,34 @@
+# Operating policy, not executable routing or a Hermes Agent config schema.
+# An executor must validate permissions and approval against the current artifact.
+policy_version: 1
+routing: manual
+executor_implemented: false
+stages:
+  Define:
+    proposed_engine: development-dept coordinator
+    intended_actions: [read_named_board, record_requirements]
+  Design:
+    proposed_engine: development-dept coordinator
+    intended_actions: [record_design, prepare_acceptance_checks]
+  Build:
+    capability_status: planned
+    proposed_engine: Claude Code through Orca
+    optional_workers: [Codex, OpenCode with LM Studio]
+    optional_worker_status: planned_manual_selection
+    requires: [approved_spec_revision, bound_repository, isolated_worktree, designated_worker, one_code_writer]
+    intended_actions: [edit_approved_paths, execute_approved_checks]
+  Verify:
+    capability_status: planned
+    proposed_engine: separate Codex session through Orca
+    requires: [frozen_commit, requirements, raw_check_commands, separate_session]
+    intended_actions: [read_artifact, execute_checks, report_findings]
+  Review:
+    capability_status: planned
+    proposed_engine: separate review session
+    requires: [frozen_commit, requirements, diff, raw_check_results, separate_session]
+    intended_actions: [assess_evidence, report_findings]
+  Release:
+    capability_status: planned
+    proposed_engine: owner-designated executor
+    requires: [owner_approval_for_exact_artifact_and_destination, completed_review]
+    intended_actions: [only_the_recorded_merge_or_release_action]

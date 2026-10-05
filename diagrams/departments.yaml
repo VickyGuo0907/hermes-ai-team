@@ -1,0 +1,200 @@
+# Capability status and approval are separate fields.
+# planned: not implemented/verified; configured: setup exists; verified: recorded live evidence.
+# Approval boxes state operating policy; no executor validates approvals in this kit.
+departments:
+  development:
+    title: Development
+    color: '#2563eb'
+    tint: '#eff6ff'
+    meta: development-dept  ·  Codex, with local Qwen as fallback
+    start: Starts from an approved idea brief, a bug, or an approved feature; worker routing is planned.
+    stages:
+    - name: Define
+      desc: Requirements, scope, non-goals, and acceptance checks.
+      tag: Codex via Hermes Agent
+      capability_status: configured
+      approval_required: false
+    - name: Design
+      desc: Technical design and the decisions still open.
+      tag: Codex via Hermes Agent
+      capability_status: configured
+      approval_required: false
+    - approval: 'Before Build: approve the spec revision and verify repo, worktree, worker and one
+        code writer. Changed artifacts need new approval.'
+    - name: Build
+      desc: Code changes on a branch.
+      tag: Claude Code via Orca
+      capability_status: planned
+      approval_required: false
+    - name: Verify
+      desc: Tests that actually ran, with results on the card.
+      tag: separate Codex session via Orca
+      capability_status: planned
+      approval_required: false
+    - name: Review
+      desc: Assess requirements, frozen commit, diff and raw check results in a separate session.
+      tag: fresh session
+      capability_status: planned
+      approval_required: false
+    - name: Release
+      desc: Merging and releasing are my calls.
+      tag: owner action
+      capability_status: planned
+      approval_required: true
+    - name: Learn
+      desc: What happened goes back on the card.
+      capability_status: planned
+      approval_required: false
+    carries:
+    - branch
+    - commit
+    - diff
+    - test results
+    - approvals
+    capability_status: configured
+  writing:
+    title: Writing
+    color: '#16a34a'
+    tint: '#f0fdf4'
+    meta: writing-dept  ·  local Qwen
+    start: Starts from a brief. A Dream Department idea can become one.
+    stages:
+    - name: Brief
+      desc: Goal, audience, scope, and where it'll be published.
+      capability_status: configured
+      approval_required: false
+    - name: Research
+      desc: Sources, each with a date.
+      tag: web toolset, when configured
+      capability_status: planned
+      approval_required: false
+    - name: Draft
+      desc: One main draft.
+      tag: local Qwen
+      capability_status: configured
+      approval_required: false
+    - name: Fact-check
+      desc: Every claim checked against a source.
+      capability_status: planned
+      approval_required: false
+    - name: Edit
+      desc: Structure and voice.
+      capability_status: configured
+      approval_required: false
+    - name: Adapt
+      desc: Versions for Medium, Substack, and X.
+      tag: local Qwen
+      capability_status: configured
+      approval_required: false
+    - name: Approve
+      desc: I approve the exact content version and each platform destination; edits require renewed
+        approval.
+      tag: my approval
+      capability_status: configured
+      approval_required: true
+    - name: Publish
+      desc: Posting to each platform.
+      tag: publishing connection
+      capability_status: planned
+      approval_required: false
+    carries:
+    - sources
+    - claim checks
+    - main draft
+    - platform versions
+    extra: A finished article can become a Media brief.
+    capability_status: configured
+  media:
+    title: Media
+    color: '#9333ea'
+    tint: '#faf5ff'
+    meta: media-dept  ·  local Qwen
+    start: Starts from a brief, or from a finished Writing article.
+    stages:
+    - name: Brief
+      desc: What the video is for and where it goes.
+      capability_status: configured
+      approval_required: false
+    - name: Script
+      desc: The words, scene by scene.
+      tag: local Qwen
+      capability_status: configured
+      approval_required: false
+    - name: Storyboard
+      desc: The scene list.
+      capability_status: configured
+      approval_required: false
+    - approval: Before any paid asset generation, I approve the production brief.
+    - name: Assets
+      desc: Generated or sourced, with where each one came from.
+      tag: video tools
+      capability_status: planned
+      approval_required: false
+    - name: Production
+      desc: Edit and export.
+      tag: video tools
+      capability_status: planned
+      approval_required: false
+    - name: Checks
+      desc: Captions and export checks.
+      capability_status: planned
+      approval_required: false
+    - name: Approval
+      desc: I watch the actual export before it goes out.
+      tag: my approval
+      capability_status: configured
+      approval_required: true
+    - name: Publication
+      desc: Posting the video.
+      tag: publishing connection
+      capability_status: planned
+      approval_required: false
+    carries:
+    - script
+    - scene list
+    - asset sources
+    - captions
+    - export checks
+    capability_status: configured
+  dream:
+    title: Dream Department
+    color: '#059669'
+    tint: '#ecfdf5'
+    meta: discovery-dept  ·  local Qwen  ·  manual setup examples; not verified live
+    start: 'Starts from a raw idea dropped in #ideas.'
+    stages:
+    - name: Capture
+      desc: Save the idea in my own words.
+      capability_status: planned
+      approval_required: false
+    - name: Clarify
+      desc: Who has this problem? How do they handle it today?
+      capability_status: planned
+      approval_required: false
+    - name: Evaluate
+      desc: Effort, maintenance, dependencies, and what I'd give up. Market claims need a dated source,
+        or they stay assumptions.
+      capability_status: planned
+      approval_required: false
+    - name: Validate
+      desc: 'The smallest useful experiment: a hypothesis, a time and cost cap, and a result I can
+        observe.'
+      capability_status: planned
+      approval_required: false
+    - name: Decide
+      desc: The department recommends, with reasons. I make the call.
+      tag: my approval
+      capability_status: planned
+      approval_required: true
+    outcomes:
+    - name: Proceed
+      note: owner-approved planning brief for Development, Writing or Media
+    - name: Investigate more
+    - name: Park
+    - name: Archive
+    carries:
+    - my original wording
+    - evidence vs. assumptions
+    - the experiment
+    - decision and reasons
+    capability_status: planned

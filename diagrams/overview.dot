@@ -1,0 +1,32 @@
+digraph G {
+  graph [rankdir=TB, bgcolor="white", pad="0.45", nodesep="0.55", ranksep="0.65", fontname="Inter", splines=true];
+  node [shape=box,style="rounded,filled",fontname="Inter",fontsize=22,penwidth=2,margin="0.22,0.14",color="#94a3b8",fillcolor="#f8fafc",fontcolor="#0f172a"];
+  edge [color="#64748b",penwidth=2,arrowsize=0.9,fontname="Inter",fontsize=12,fontcolor="#475569"];
+  desk [label="Hermes Agent Desktop\nProfile access configured"];
+  discord [label="Discord · one shared bot\nTennis board read: verified\nIdeas route: planned"];
+  {rank=same;desk;discord;}
+  coord [label="Hermes Agent profiles\nMessaging gateway for Discord",fillcolor="#0f172a",fontcolor="white",color="#0f172a"];
+  dream [label="Dream / Discovery\nLocal Qwen planned\nNot verified live",fillcolor="#ecfdf5",color="#10b981",style="rounded,filled,dashed"];
+  dev [label="Development\nCodex configured\nLocal fallback unverified",fillcolor="#eff6ff",color="#3b82f6"];
+  writing [label="Writing\nLocal Qwen configured\nResearch planned",fillcolor="#f0fdf4",color="#22c55e"];
+  media [label="Media\nLocal Qwen configured\nProduction planned",fillcolor="#faf5ff",color="#a855f7"];
+  {rank=same;dream;dev;writing;media;}
+  boards [label="Shared Kanban system\nSeparate project and department boards\nAuthoritative records link artifacts and stage tasks"];
+  approval [label="Owner approval · operating policy\nExact artifact revision, action and destination\nEnforcement connection is planned",fillcolor="#fffbeb",color="#f59e0b"];
+  subgraph cluster_next {
+    label="PLANNED EXECUTION CONNECTIONS";fontname="Inter";fontsize=15;fontcolor="#9a3412";style="rounded,dashed";color="#f59e0b";
+    executor [label="Artifact and permission checks\nStage routing not implemented",fillcolor="#fffbeb",color="#f59e0b",style="rounded,filled,dashed"];
+    build [label="Claude Code via Orca\nBuild worker",style="rounded,filled,dashed"];
+    verify [label="Separate Codex session\nExecuted verification",style="rounded,filled,dashed"];
+    pub [label="Production and publishing\nExports and publication",style="rounded,filled,dashed"];
+    {rank=same;build;verify;pub;}
+    executor->build [style=dashed];executor->verify [style=dashed];executor->pub [style=dashed];
+  }
+  desk->coord;discord->coord;
+  coord->dream [style=dashed];coord->dev;coord->writing;coord->media;
+  dream->dev [style=dashed,constraint=false,label="approved planning brief"];
+  dream->boards [style=dashed,dir=both];dev->boards [dir=both];writing->boards [dir=both];media->boards [dir=both];
+  boards->approval;approval->executor [style=dashed];
+  legend [shape=plaintext,style="",fontsize=13,label="Solid: configured   |   Dashed: planned   |   Verified: explicit recorded evidence\nAmber: approval policy, independent of capability status"];
+  verify->legend [style=invis];
+}

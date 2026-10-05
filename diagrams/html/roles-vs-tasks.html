@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- Rendered by diagrams/render.py into diagrams/png/roles-vs-tasks.png (screenshot of #card). -->
+<html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;font-family:Inter,-apple-system,"SF Pro Text","Segoe UI",system-ui,sans-serif;color:#0f172a}
+.card{width:720px;padding:34px 34px 26px;background:#fff}
+.title{font-size:30px;font-weight:700;letter-spacing:-.01em}
+.sub{font-size:18px;color:#475569;margin-top:4px}
+.sec{margin-top:24px;border-radius:14px;padding:18px 18px 16px}
+.sec.role{background:#f8fafc;border:2px solid #e2e8f0}
+.sec.task{background:#eff6ff;border:2px solid #bfdbfe}
+.label{font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#475569;margin-bottom:12px}
+.sec.task .label{color:#1d4ed8}
+.chain{display:flex;align-items:center;gap:6px}
+.r{flex:1;background:#fff;border:2px solid #cbd5e1;border-radius:10px;padding:10px 6px;text-align:center;font-size:17px;font-weight:600;line-height:1.25;min-height:66px;display:flex;align-items:center;justify-content:center}
+.ar{color:#94a3b8;font-size:22px;font-weight:700}
+.note{font-size:17.5px;color:#334155;margin-top:12px;line-height:1.4}
+.hub{background:#fff;border:2px solid #2563eb;border-radius:12px;padding:10px 14px;margin-bottom:12px}
+.hub b{font-size:19px}
+.hub .chips{margin-top:6px}
+.chip{display:inline-block;font-size:15.5px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:2px 11px;margin:0 6px 6px 0}
+.t{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid #bfdbfe;border-radius:10px;padding:9px 12px;margin-bottom:8px}
+.t .n{flex:0 0 98px;font-size:19px;font-weight:650}
+.t .c{display:flex;flex-wrap:wrap;gap:6px}
+.p{font-size:15px;border-radius:999px;padding:2px 10px;border:1.5px solid #cbd5e1;background:#fff;color:#334155}
+.p.m{border-color:#93c5fd;background:#eff6ff;color:#1e3a8a}
+.p.i{border-color:#a78bfa;background:#f5f3ff;color:#4c1d95;font-weight:600}
+.t.planned{border-style:dashed;border-color:#94a3b8}
+.t.gate{border-color:#f59e0b;background:#fffbeb}
+.t.gate .p.m{border-color:#f59e0b;background:#fef3c7;color:#92400e}
+.legend{margin-top:12px;font-size:14.5px;color:#64748b;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:7px}
+.sw{width:22px;height:14px;border-radius:4px;display:inline-block}
+</style></head><body>
+<div class="card" id="card">
+  <div class="title">Roles vs. tasks</div>
+  <div class="sub">Same lifecycle. The work record preserves context; specialist sessions handle execution.</div>
+
+  <div class="sec role">
+    <div class="label">Role-based coordination</div>
+    <div class="chain">
+      <div class="r">Business analyst</div><span class="ar">→</span>
+      <div class="r">Architect</div><span class="ar">→</span>
+      <div class="r">Developer</div><span class="ar">→</span>
+      <div class="r">QA</div><span class="ar">→</span>
+      <div class="r">Release manager</div>
+    </div>
+    <div class="note">An illustrative role arrangement. Roles carry expertise and accountability; the lifecycle itself does not prescribe these five roles.</div>
+  </div>
+
+  <div class="sec task">
+    <div class="label">Task-centered coordination and specialist execution</div>
+    <div class="hub"><b>One authoritative record links the artifacts</b>
+      <div class="chips"><span class="chip">requirements</span><span class="chip">decisions</span><span class="chip">checks</span><span class="chip">next action</span></div>
+    </div>
+    <div class="t"><div class="n">Define</div><div class="c"><span class="p m">Codex via Hermes Agent</span><span class="p">board coordination configured</span></div></div>
+    <div class="t"><div class="n">Design</div><div class="c"><span class="p m">Codex via Hermes Agent</span><span class="p">board coordination configured</span></div></div>
+    <div class="t planned"><div class="n">Build</div><div class="c"><span class="p m">Claude Code via Orca</span><span class="p">writes code on a branch</span></div></div>
+    <div class="t planned"><div class="n">Verify</div><div class="c"><span class="p m">separate Codex session</span><span class="p">runs tests</span><span class="p i">separate assessment planned</span></div></div>
+    <div class="t planned"><div class="n">Review</div><div class="c"><span class="p m">fresh session</span><span class="p">frozen commit</span><span class="p i">separate assessment planned</span></div></div>
+    <div class="t planned gate"><div class="n">Release</div><div class="c"><span class="p m">me</span><span class="p">approve exact artifact and destination</span></div></div>
+  </div>
+
+  <div class="note">Worker routing and access enforcement are planned. A fresh session alone does not guarantee independent judgment.</div>
+  <div class="legend">
+    <span class="lg"><span class="sw" style="background:#eff6ff;border:1.5px solid #93c5fd"></span>Model or worker</span>
+    <span class="lg"><span class="sw" style="background:#fff;border:1.5px solid #cbd5e1"></span>Intended access</span>
+    <span class="lg"><span class="sw" style="background:#f5f3ff;border:1.5px solid #a78bfa"></span>Separate assessment</span>
+    <span class="lg"><span class="sw" style="background:#fff;border:2px dashed #94a3b8"></span>Planned capability</span>
+    <span class="lg"><span class="sw" style="background:#fef3c7;border:2px solid #f59e0b"></span>My approval</span>
+  </div>
+</div>
+</body></html>

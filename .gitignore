@@ -1,0 +1,32 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Python / uv
+__pycache__/
+.venv/
+*.pyc
+
+# Diagram scratch output
+diagrams/png/*.html
+
+# macOS
+.DS_Store
+
+# Local runtime exports and backups
+auth.json
+state.db
+*.db
+backups/
+.env.*
+!.env.example
+
+# Generated article preview
+article/*.html
+# Local working material
+*.log
+*.key
+*.pem
+private/
+local/

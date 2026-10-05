@@ -1,0 +1,68 @@
+{
+  "hermes": {
+    "page": "https://hermes-agent.nousresearch.com",
+    "asset": "https://hermes-agent.nousresearch.com/icon.png?icon.160vfo.zgihhn.png?dpl=dpl_DfhmAcBZdPdxxrdodPwFkJTYVn8N",
+    "file": "hermes.png"
+  },
+  "obsidian": {
+    "page": "https://obsidian.md/brand",
+    "asset": "https://obsidian.md/apple-touch-icon.png",
+    "file": "obsidian.png"
+  },
+  "opencode": {
+    "page": "https://opencode.ai",
+    "asset": "https://opencode.ai/apple-touch-icon-v3.png",
+    "file": "opencode.png"
+  },
+  "orca": {
+    "page": "https://www.onorca.dev",
+    "asset": "https://www.onorca.dev/apple-icon.png?apple-icon.0fdzzo.m2ozxq.png",
+    "file": "orca.png"
+  },
+  "lmstudio": {
+    "page": "https://lmstudio.ai",
+    "asset": "https://lmstudio.ai/assets/marketing/logo-192x192.png",
+    "file": "lmstudio.png"
+  },
+  "qwen": {
+    "page": "https://qwen.ai",
+    "asset": "https://img.alicdn.com/imgextra/i4/O1CN01OXv3EM1FN8t9W4P79_!!6000000000474-2-tps-80-80.png",
+    "file": "qwen.png"
+  },
+  "openai": {
+    "asset": "Official icon extracted from the installed vendor application",
+    "file": "openai.png",
+    "note": "Official installed app icon; shared OpenAI brand mark used for ChatGPT and Codex; labels distinguish products."
+  },
+  "discord": {
+    "page": "https://discord.com",
+    "asset": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6266bc493fb42d4e27bb8393_847541504914fd33810e70a0ea73177e.ico",
+    "file": "discord.png"
+  },
+  "slack": {
+    "page": "https://slack.com",
+    "asset": "https://a.slack-edge.com/9cc0056/img/icons/favicon-32.png",
+    "file": "slack.png"
+  },
+  "medium": {
+    "page": "https://github.com/Medium/medium-logos",
+    "asset": "https://raw.githubusercontent.com/Medium/medium-logos/master/03_Symbol/01_Black/SVG/Medium_Symbol_NoPadding.svg",
+    "file": "medium.svg",
+    "note": "Legacy symbol from Medium\u2019s official logo repository; not a claim that this is its latest identity."
+  },
+  "substack": {
+    "page": "https://substack.com",
+    "asset": "https://substackcdn.com/icons/substack/apple-touch-icon.png",
+    "file": "substack.png"
+  },
+  "x": {
+    "page": "https://x.com",
+    "asset": "https://x.com/apple-touch-icon.png",
+    "file": "x.png"
+  },
+  "claude-app": {
+    "asset": "Official icon extracted from the installed vendor application",
+    "file": "claude-app.png",
+    "note": "Official installed Claude app icon identifies the Claude product family; Claude Code is separately labeled."
+  }
+}

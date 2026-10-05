@@ -1,0 +1,21 @@
+# Record template only. No worker or publisher reads/enforces it in this kit.
+# This is not a Hermes Agent config block.
+approval:
+  decision: pending             # pending | approved | rejected | superseded
+  approved_by: OWNER
+  approved_at: null
+  source_task: TASK_ID
+  authorized_action: PLANNING_HANDOFF
+  destination: BOARD_REPOSITORY_OR_PLATFORM
+  artifact:
+    reference: SPEC_COMMIT_CONTENT_OR_EXPORT
+    revision_or_sha256: EXACT_REVISION_OR_HASH
+  scope: []
+  permitted_paths: []
+  cost_ceiling: null            # also record currency when a paid action is approved
+  currency: null
+  expires_at: null
+  invalidated_by:
+    - artifact revision or hash changes
+    - authorized action or destination changes
+    - scope or cost exceeds the recorded approval

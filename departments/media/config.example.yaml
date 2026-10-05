@@ -1,0 +1,18 @@
+# Merge into ~/.hermes/profiles/media-dept/config.yaml
+# Local only, on purpose: no cloud fallback.
+
+model:
+  provider: lmstudio
+  default: "YOUR_LOCAL_MODEL_ID"          # exact id from: curl http://127.0.0.1:1234/v1/models
+  base_url: "http://127.0.0.1:1234/v1"
+  api_mode: chat_completions
+fallback_providers: []
+
+platform_toolsets:
+  cli: [kanban, memory, no_mcp]
+  discord: [kanban, memory, no_mcp]
+
+# Coordination only while setting up. These are not a security boundary.
+kanban:
+  dispatch_in_gateway: false
+  dispatch_profiles: []

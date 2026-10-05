@@ -1,0 +1,40 @@
+# Merge into the default profile: ~/.hermes/config.yaml
+#
+# One shared Discord bot serves every department. Each channel routes to
+# a department profile. Add Writing and Media channels the same way.
+# Then preview and apply the multiplexed gateway:
+#   hermes -p default gateway migrate --multiplex --dry-run
+#   hermes -p default gateway migrate --multiplex --yes
+#   hermes -p default gateway status
+
+gateway:
+  profile_routes:
+    - name: development-channel
+      platform: discord
+      profile: development-dept
+      chat_id: "YOUR_DEV_CHANNEL_ID"
+      bot_profile: default
+    - name: ideas-channel
+      platform: discord
+      profile: discovery-dept
+      chat_id: "YOUR_IDEAS_CHANNEL_ID"
+      bot_profile: default
+
+discord:
+  require_mention: true
+  channel_prompts:
+    "YOUR_DEV_CHANNEL_ID": |
+      Board: software-project
+      Use this board for every project operation.
+      During setup, coordinate this board only. Do not dispatch workers.
+    "YOUR_IDEAS_CHANNEL_ID": |
+      Board: idea-pipeline
+      Capture, clarify, evaluate, validate, decide.
+      Keep evidence and assumptions separate.
+      Prepare a planning handoff only after explicit owner approval.
+      Do not implement or dispatch workers.
+
+# Keep the default profile from dispatching tasks while you set up boards.
+kanban:
+  dispatch_in_gateway: false
+  dispatch_profiles: []
